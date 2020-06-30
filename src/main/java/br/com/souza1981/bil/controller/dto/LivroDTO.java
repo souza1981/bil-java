@@ -10,6 +10,8 @@ public class LivroDTO {
     private String descricao;
     private Integer quantidadePaginas;
     private EditoraDTO editora;
+    private AutorDTO autor;
+    private CategoriaDTO categoria;
 
     public LivroDTO(Livro livro) {
 
@@ -18,8 +20,9 @@ public class LivroDTO {
         descricao = livro.getDescricao();
         quantidadePaginas = livro.getQuantidadePaginas();
         editora = new EditoraDTO(livro.getEditora());
+        autor = new AutorDTO(livro.getAutor());
+        categoria = new CategoriaDTO(livro.getCategoria());
 
-        metodoExtraido("teste 0");
     }
 
     public static Page<LivroDTO> converter(Page<Livro> livros) {
@@ -45,11 +48,5 @@ public class LivroDTO {
     public Integer getQuantidadePaginas() {
         return quantidadePaginas;
     }
-
-    private void metodoExtraido(String x) {
-        System.out.println(x);
-        System.out.println("teste 1");
-    }
-
 
 }

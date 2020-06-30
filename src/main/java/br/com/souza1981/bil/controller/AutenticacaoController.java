@@ -1,7 +1,7 @@
 package br.com.souza1981.bil.controller;
 
 import br.com.souza1981.bil.config.security.TokenService;
-import br.com.souza1981.bil.controller.dto.TokenDto;
+import br.com.souza1981.bil.controller.dto.TokenDTO;
 import br.com.souza1981.bil.controller.form.LoginForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -36,7 +36,7 @@ public class AutenticacaoController {
 
             String token = tokenService.gerarToken(authenticate);
 
-            return ResponseEntity.ok(new TokenDto(token, "Bearer"));
+            return ResponseEntity.ok(new TokenDTO(token, "Bearer"));
 
 
         } catch (AuthenticationException e) {

@@ -18,7 +18,9 @@ public class EditoraDTO {
     }
 
     public static List<EditoraDTO> converter(List<Editora> editoras) {
-        return editoras.stream().map(EditoraDTO::new).collect(Collectors.toList());
+        return editoras.stream()
+                .map(EditoraDTO::new)
+                .collect(Collectors.toList());
     }
 
     public Long getId() {

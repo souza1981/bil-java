@@ -14,15 +14,39 @@ public class Livro {
     @ManyToOne
     private Editora editora;
 
-    public Livro() {
+    @OneToOne
+    private Autor autor;
 
-    }
+    @OneToOne
+    private Categoria categoria;
 
-    public Livro(String titulo, String descricao, Integer quantidadePaginas, Editora editora) {
+    public Livro(String titulo, String descricao, Integer quantidadePaginas, Editora editora, Autor autor, Categoria categoria) {
         this.titulo = titulo;
         this.descricao = descricao;
         this.quantidadePaginas = quantidadePaginas;
         this.editora = editora;
+        this.autor = autor;
+        this.categoria = categoria;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
+    public Autor getAutor() {
+        return autor;
+    }
+
+    public Livro() {
+
+    }
+
+    public void setAutor(Autor autor) {
+        this.autor = autor;
     }
 
     public Livro(String titulo, String descricao, int quantidadePaginas) {
@@ -89,10 +113,7 @@ public class Livro {
             return false;
         Livro other = (Livro) obj;
         if (id == null) {
-            if (other.id != null)
-                return false;
-        } else if (!id.equals(other.id))
-            return false;
-        return true;
+            return other.id == null;
+        } else return id.equals(other.id);
     }
 }
