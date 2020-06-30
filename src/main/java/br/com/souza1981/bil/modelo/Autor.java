@@ -5,7 +5,7 @@ import br.com.souza1981.bil.util.Estados;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class Autor {
     @Id
@@ -14,13 +14,13 @@ public class Autor {
 
     private String nome;
 
-    private Date dataNascimento;
+    private LocalDateTime dataNascimento;
 
     private String cidade;
 
     private Estados estado;
 
-    public Autor(Long id, String nome, Date dataNascimento, String cidade, Estados estado) {
+    public Autor(Long id, String nome, LocalDateTime dataNascimento, String cidade, Estados estado) {
         this.id = id;
         this.nome = nome;
         this.dataNascimento = dataNascimento;
@@ -36,7 +36,7 @@ public class Autor {
         return nome;
     }
 
-    public Date getDataNascimento() {
+    public LocalDateTime getDataNascimento() {
         return dataNascimento;
     }
 

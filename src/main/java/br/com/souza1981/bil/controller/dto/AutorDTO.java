@@ -2,7 +2,7 @@ package br.com.souza1981.bil.controller.dto;
 
 import br.com.souza1981.bil.modelo.Autor;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class AutorDTO {
 
@@ -10,7 +10,7 @@ public class AutorDTO {
 
     private String nome;
 
-    private Date dataNascimento;
+    private LocalDateTime dataNascimento;
 
     private String cidade;
 
