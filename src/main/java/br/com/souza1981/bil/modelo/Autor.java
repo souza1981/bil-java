@@ -2,11 +2,13 @@ package br.com.souza1981.bil.modelo;
 
 import br.com.souza1981.bil.util.Estados;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.time.LocalDateTime;
 
+@Entity
 public class Autor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,6 +28,10 @@ public class Autor {
         this.dataNascimento = dataNascimento;
         this.cidade = cidade;
         this.estado = estado;
+    }
+
+    public Autor() {
+
     }
 
     public Long getId() {

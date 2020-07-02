@@ -40,5 +40,12 @@ public class Editora {
         Email = email;
     }
 
+    public Editora(String nome, String email) {
+        this.nome = nome;
+        Email = email;
+    }
 
+    public Editora() {
+
+    }
 }

@@ -1,6 +1,7 @@
 package br.com.souza1981.bil.controller.dto;
 
 import br.com.souza1981.bil.modelo.Editora;
+import org.springframework.data.domain.Page;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -21,6 +22,10 @@ public class EditoraDTO {
         return editoras.stream()
                 .map(EditoraDTO::new)
                 .collect(Collectors.toList());
+    }
+
+    public static Page<EditoraDTO> converter(Page<Editora> editoras) {
+        return editoras.map(EditoraDTO::new);
     }
 
     public Long getId() {

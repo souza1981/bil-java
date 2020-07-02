@@ -1,9 +1,11 @@
 package br.com.souza1981.bil.modelo;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+@Entity
 public class Categoria {
 
     @Id
@@ -18,6 +20,10 @@ public class Categoria {
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;
+    }
+
+    public Categoria() {
+
     }
 
     public Long getId() {

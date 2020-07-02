@@ -13,6 +13,7 @@ public class LivroDTO {
     private AutorDTO autor;
     private CategoriaDTO categoria;
 
+
     public LivroDTO(Livro livro) {
 
         id = livro.getId();
@@ -49,4 +50,11 @@ public class LivroDTO {
         return quantidadePaginas;
     }
 
+    public AutorDTO getAutor() {
+        return autor;
+    }
+
+    public CategoriaDTO getCategoria() {
+        return categoria;
+    }
 }

@@ -14,6 +14,26 @@ public class AutorDTO {
 
     private String cidade;
 
+    public Long getId() {
+        return id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public LocalDateTime getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
     private String estado;
 
     public AutorDTO(Autor autor) {
