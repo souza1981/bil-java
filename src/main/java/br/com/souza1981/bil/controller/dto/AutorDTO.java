@@ -1,6 +1,7 @@
 package br.com.souza1981.bil.controller.dto;
 
 import br.com.souza1981.bil.modelo.Autor;
+import org.springframework.data.domain.Page;
 
 import java.time.LocalDateTime;
 
@@ -13,6 +14,10 @@ public class AutorDTO {
     private LocalDateTime dataNascimento;
 
     private String cidade;
+
+    public static Page<AutorDTO> converter(Page<Autor> autores) {
+        return autores.map(AutorDTO::new);
+    }
 
     public Long getId() {
         return id;

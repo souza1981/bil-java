@@ -2,10 +2,7 @@ package br.com.souza1981.bil.modelo;
 
 import br.com.souza1981.bil.util.Estados;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
@@ -20,6 +17,7 @@ public class Autor {
 
     private String cidade;
 
+    @Enumerated(EnumType.STRING)
     private Estados estado;
 
     public Autor(Long id, String nome, LocalDateTime dataNascimento, String cidade, Estados estado) {
